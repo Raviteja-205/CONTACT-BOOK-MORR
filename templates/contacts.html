@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> CONTACTS</title>
+{% endblock %}
+
+{% block body %}
+<br><br>
+<hr>
+<form class="text-center" action="/contacts" method='POST'>
+    <input name="name" placeholder="Name">
+    <input name="mail" placeholder="Mail ID">
+    <input name="number" placeholder="number">
+    <input type="submit" value="Submit"></input>
+</form>
+</hr>
+<br><br>
+<h1>CONTACTS</h1>
+{% for contact in contacts %}
+<hr>
+<div class="row">
+    <div class="col-3">NAME : {{contact.name}} </div>
+    <div class="col-3">MAIL : {{contact.mail}} </div>
+    <div class="col-3">NO : {{contact.number}}</div>
+    <div class="col-3">
+        <a href="/contacts/edit/{{contact.id}}" class="btn btn-success">Edit</a>
+        <a href="/contacts/delete/{{contact.id}}" class="btn btn-danger">Delete</a>
+    </div><br><hr><br>
+</div>
+{% endfor %}
+    <!-- <br><br><br><br> -->
+    <!-- <main role="main" class="container"> -->
+        <!-- <div class="jumbotron"> -->
+            <!-- <h1>Flask App</h1> -->
+            <!-- <p class="lead">This example is a quick app to illustrate how the flask works. As you scroll, this component -->
+                <!-- remains in its original position and moves with the rest of the page.</p> -->
+            <!-- <a class="btn btn-lg btn-primary" href="/posts" role="button">View posts&raquo;</a> -->
+        <!-- </div> -->
+    <!-- </main> -->
+    {% endblock %}

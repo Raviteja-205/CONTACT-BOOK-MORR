@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> CONTACT</title>
+{% endblock %}
+
+{% block body %}
+<br><br>
+{% if contacts: %}
+<h1>FILTERED CONTACTS</h1>
+    {% for contact in contacts %}
+    <hr>
+        <p> {{contact.name}} </p>
+        <p> {{contact.number}}  </p>
+    </hr>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

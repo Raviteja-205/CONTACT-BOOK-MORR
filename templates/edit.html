@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>EDIT CONTACT</title>
+{% endblock %}
+
+{% block body %}<br><br>
+<h1> EDIT CONTACT </h1><br>
+<form action="/contacts/edit/{{contacts.id}}" method='POST'>
+    <input name="name" value="{{contacts.name}}">
+    <input name="number" value="{{contacts.number}}">
+    <input class="btn btn-primary" type="submit" value="UPDATE"></input>
+</form>
+
+{% endblock %}
