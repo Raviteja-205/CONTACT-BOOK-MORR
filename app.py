@@ -35,7 +35,7 @@ def main():
 @app.route('/signin/new_user',methods=['GET','POST'])
 def new_user():
     if request.method=='POST':
-        print("initiated")
+        print("initiated signin")
         mail_id = request.form['mail_id']
         password = request.form['password']
         new_user = userdb(mail_id = mail_id, password=password)
